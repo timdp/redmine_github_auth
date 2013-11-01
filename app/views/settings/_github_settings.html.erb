@@ -1,16 +1,20 @@
 <p>
+  <label>Enabled:</label>
+  <%= check_box_tag "settings[enabled]", true, @settings[:enabled] %>
+</p>
+<p>
+  <label>GitHub URL:</label>
+  <%= text_field_tag 'settings[github_url]', @settings[:github_url] %>
+</p>
+<p>
+  <label>GitHub API URL:</label>
+  <%= text_field_tag 'settings[github_api_url]', @settings[:github_api_url] %>
+</p>
+<p>
   <label>Client ID:</label>
   <%= text_field_tag 'settings[client_id]', @settings[:client_id] %>
 </p>
 <p>
   <label>Client Secret:</label>
   <%= text_field_tag 'settings[client_secret]', @settings[:client_secret] %>
-</p>
-<p>
-  <label>Available domains</label>
-  <%= text_area_tag "settings[allowed_domains]", @settings[:allowed_domains], :rows => 5 %>
-</p>
-<p>
-  <label>Oauth authentication:</label>
-  <%= check_box_tag "settings[github_oauth_authentication]", true, @settings[:github_oauth_authentication] %>
 </p>

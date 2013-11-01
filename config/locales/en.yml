@@ -1,6 +1,5 @@
 en:
-  notice_unable_to_obtain_github_credentials: "Unable to obtain credentials from Github."
-  notice_domain_not_allowed: "You can not login using %{domain} domain."
-  notice_github_access_denied: "You must allow to use you Github credentials to enter this site."
-  login_via_github: "Login via Github"
-  notice_no_verified_email_we_could_use: "No verified email provided by Github, go and verify you email address on github.com"
+  notice_unable_to_obtain_github_credentials: "Unable to obtain credentials from GitHub."
+  notice_github_access_denied: "Please allow Redmine access to continue."
+  notice_user_not_found: "We could not find an account by your name."
+  login_via_github: "Log in with GitHub"
