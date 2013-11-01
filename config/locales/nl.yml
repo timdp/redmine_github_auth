@@ -1,0 +1,5 @@
+nl:
+  notice_unable_to_obtain_github_credentials: "Ophalen van logingegevens mislukt."
+  notice_github_access_denied: "Gelieve Redmine toegang te geven om verder te gaan."
+  notice_user_not_found: "Bij uw gebruikersnaam hoort geen account."
+  login_via_github: "Inloggen met GitHub"
