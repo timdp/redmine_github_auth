@@ -5,7 +5,7 @@ class RedmineOauthController < AccountController
   def oauth_github
     if Setting.plugin_redmine_omniauth_github[:enabled]
       session[:back_url] = params[:back_url]
-      redirect_to oauth_client.auth_code.authorize_url(:redirect_uri => oauth_github_callback_url, :scope => scopes)
+      redirect_to oauth_client.auth_code.authorize_url(:redirect_uri => oauth_github_callback_url)
     else
       password_authentication
     end
@@ -46,9 +46,5 @@ class RedmineOauthController < AccountController
 
   def settings
     @settings ||= Setting.plugin_redmine_omniauth_github
-  end
-
-  def scopes
-    'user'
   end
 end
