@@ -2,4 +2,6 @@ en:
   notice_unable_to_obtain_github_credentials: "Unable to obtain credentials from GitHub."
   notice_github_access_denied: "Please allow Redmine access to continue."
   notice_user_not_found: "We could not find an account by your name."
-  login_via_github: "Log in with GitHub"
+  redirecting_to_github: "You are being redirected to GitHub for authentication."
+  local_login: "Local Login"
+  
