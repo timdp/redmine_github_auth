@@ -14,8 +14,10 @@ var gitHubRedirectTimeout = setTimeout(function() {
     <%= l(:redirecting_to_github) %>
   </p>
   <p style="text-align: center; margin-top: 2em">
-    <input type="button" value="<%= l(:local_login) %>" class="button"
+    <button class="button"
     onclick="clearTimeout(gitHubRedirectTimeout); $('#redirect-notice').fadeOut(function() { $('#local-login-form').fadeIn(); });">
+      <%= l(:local_login) %>
+    </button>
   </p>
 </div>
 <div id="local-login-form" style="display: none;">
