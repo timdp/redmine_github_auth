@@ -3,5 +3,5 @@ en:
   notice_github_access_denied: "Please allow Redmine access to continue."
   notice_user_not_found: "We could not find an account by your name."
   redirecting_to_github: "You are being redirected to GitHub for authentication."
-  local_login: "Local Login"
+  local_login: "Local login"
   
