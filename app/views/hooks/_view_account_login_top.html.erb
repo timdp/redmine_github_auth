@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag 'buttons', :plugin => 'redmine_omniauth_github' %>
+
+<% if Setting.plugin_redmine_omniauth_github[:enabled] %>
+<script type="text/javascript">
+var gitHubRedirectTimeout = setTimeout(function() {
+  window.location.href = "<%= oauth_github_path(:back_url => back_url) %>";
+}, 3000);
+</script>
+<div id="redirect-notice" style="padding: 3em">
+  <p style="text-align: center">
+    <%= link_to oauth_github_path(:back_url => back_url) do %>
+      <%= image_tag('/plugin_assets/redmine_omniauth_github/images/octocat.png', :style => 'width: 200px', :alt => 'GitHub' %>
+    <% end %>
+  </p>
+  <p style="text-align: center">
+    <%= l(:redirecting_to_github) %>
+  </p>
+  <p style="text-align: center; margin-top: 2em">
+    <input type="button" value="<%= l(:local_login) %>" class="button"
+    onclick="clearTimeout(gitHubRedirectTimeout); $('#redirect-notice').fadeOut(function() { $('#local-login-form').fadeIn(); });">
+  </p>
+</div>
+<div id="local-login-form" style="display: none;">
+<% end %>
