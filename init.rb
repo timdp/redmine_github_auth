@@ -1,12 +1,12 @@
 require 'redmine'
-require_dependency 'redmine_omniauth_github/hooks'
+require_dependency 'redmine_github_auth/hooks'
 
-Redmine::Plugin.register :redmine_omniauth_github do
-  name 'Redmine OmniAuth GitHub plugin'
-  author 'Marek Hulan, Tim De Pauw'
+Redmine::Plugin.register :redmine_github_auth do
+  name 'Redmine GitHub Authentication'
+  author 'Tim De Pauw'
   description 'Lets existing users log in via GitHub'
-  version '0.0.2'
-  url 'https://github.com/ares/redmine_omniauth_github'
+  version '0.0.1'
+  url 'https://github.com/timdp/redmine_github_auth'
   author_url 'https://github.com/timdp'
 
   settings :default => {

@@ -3,7 +3,7 @@ require 'json'
 
 class RedmineOauthController < AccountController
   def oauth_github
-    if Setting.plugin_redmine_omniauth_github[:enabled]
+    if Setting.plugin_redmine_github_auth[:enabled]
       session[:back_url] = params[:back_url]
       redirect_to oauth_client.auth_code.authorize_url(:redirect_uri => oauth_github_callback_url)
     else
@@ -17,7 +17,7 @@ class RedmineOauthController < AccountController
       redirect_to signin_path
     else
       token = oauth_client.auth_code.get_token(params[:code], :redirect_uri => oauth_github_callback_url)
-      user_resp = token.get(Setting.plugin_redmine_omniauth_github[:github_api_url] + '/user')
+      user_resp = token.get(Setting.plugin_redmine_github_auth[:github_api_url] + '/user')
       user_info = JSON.parse(user_resp.body)
       login = user_info["login"]
 
@@ -39,12 +39,12 @@ class RedmineOauthController < AccountController
 
   def oauth_client
     @client ||= OAuth2::Client.new(settings[:client_id], settings[:client_secret],
-      :site => Setting.plugin_redmine_omniauth_github[:github_url],
+      :site => Setting.plugin_redmine_github_auth[:github_url],
       :authorize_url => '/login/oauth/authorize',
       :token_url => '/login/oauth/access_token')
   end
 
   def settings
-    @settings ||= Setting.plugin_redmine_omniauth_github
+    @settings ||= Setting.plugin_redmine_github_auth
   end
 end
